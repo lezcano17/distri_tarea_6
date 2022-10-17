@@ -44,7 +44,7 @@ import py.una.pol.personas.service.PersonaService;
  * <p/>
  * Esta clase produce un servicio RESTful para leer y escribir contenido de personas
  */
-@Path("/personas")
+@Path("/cantantes")
 @RequestScoped
 public class CantanteRESTService {
 
@@ -56,8 +56,11 @@ public class CantanteRESTService {
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<Persona> listar() {
-        return personaService.seleccionar();
+    public Persona listar() {
+        Persona p = new Persona(10L, "Julio", "Lezcano");
+        log.info("Modificado por JULIO LEZCANO");
+        return p;
+
     }
 
     @GET
